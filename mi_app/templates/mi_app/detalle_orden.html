@@ -1,0 +1,22 @@
+<!-- order_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Orden de Compra</title>
+</head>
+<body>
+    <h1>Detalle de Orden de Compra #{{ orden.id }}</h1>
+    <p><strong>Dirección:</strong> {{ orden.direccion }}</p>
+    <p><strong>Teléfono:</strong> {{ orden.telefono }}</p>
+    <p><strong>Comuna:</strong> {{ orden.comuna }}</p>
+    <p><strong>Región:</strong> {{ orden.region }}</p>
+    <h2>Libros</h2>
+    <ul>
+        {% for detalle in orden.detalleordencompra_set.all %}
+            <li>{{ detalle.libro }} (Cantidad: {{ detalle.cantidad }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial de Libros</title>
+</head>
+<body>
+    <h1>Editorial de Libros</h1>
+    
+    <h2>Lista de Libros Disponibles:</h2>
+    <ul>
+        {% for libro in libros %}
+            <li>{{ libro.titulo }} - {{ libro.autor }} - Precio: ${{ libro.precio }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
